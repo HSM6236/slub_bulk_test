@@ -1,0 +1,6 @@
+Machine: qemu-system-x86 -m 1024M -smp 8
+kernel: Linux 7.0.0-rc5-next-20260326
+Config: x86_64_defconfig
+cpu: 0
+rounds: 20
+total_mb: 256
