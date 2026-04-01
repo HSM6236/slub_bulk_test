@@ -12,7 +12,10 @@ Functionality:
 - Extracts the following fields from each valid benchmark line:
     - object size (obj)
     - batch size (batch)
-    - per-object latency in nanoseconds (ns_per_obj)
+    - bulks
+    - total allocation time in nanoseconds (alloc_ns)
+- Computes per-object latency as:
+    alloc_ns / (bulks * batch)
 - Computes, for each before/after pair:
     - mean latency
     - standard deviation
@@ -39,14 +42,18 @@ Error handling:
 Typical usage:
     python3 summarize.py RESULTS_DIR
 """
+
 import math
 import re
 import sys
 from pathlib import Path
 
 LINE_RE = re.compile(
-    r"obj=(?P<obj>\d+)\s+batch=(?P<batch>\d+).*?ns_per_obj=(?P<ns>\d+)"
+    r"obj=(?P<obj>\d+)\s+batch=(?P<batch>\d+).*?"
+    r"bulks=(?P<bulks>\d+).*?"
+    r"alloc_ns=(?P<alloc_ns>\d+)"
 )
+
 
 def parse_ns_per_obj(path: Path):
     vals = []
@@ -63,24 +70,54 @@ def parse_ns_per_obj(path: Path):
     except FileNotFoundError:
         raise RuntimeError(f"file not found: {path}")
 
-    for line in lines:
+    for lineno, line in enumerate(lines, start=1):
         m = LINE_RE.search(line)
         if not m:
             continue
+
         obj = int(m.group("obj"))
         batch = int(m.group("batch"))
-        ns = int(m.group("ns"))
-        vals.append(ns)
-        obj_seen = obj
-        batch_seen = batch
+        bulks = int(m.group("bulks"))
+        alloc_ns = int(m.group("alloc_ns"))
+
+        if bulks <= 0:
+            raise RuntimeError(
+                f"invalid bulks=0 in {path} at line {lineno}"
+            )
+        if batch <= 0:
+            raise RuntimeError(
+                f"invalid batch=0 in {path} at line {lineno}"
+            )
+
+        ns_per_obj = alloc_ns / (bulks * batch)
+
+        vals.append(ns_per_obj)
+
+        if obj_seen is None:
+            obj_seen = obj
+        elif obj_seen != obj:
+            raise RuntimeError(
+                f"inconsistent obj in {path} at line {lineno}: "
+                f"expected obj={obj_seen}, got obj={obj}"
+            )
+
+        if batch_seen is None:
+            batch_seen = batch
+        elif batch_seen != batch:
+            raise RuntimeError(
+                f"inconsistent batch in {path} at line {lineno}: "
+                f"expected batch={batch_seen}, got batch={batch}"
+            )
 
     if not vals:
-        raise RuntimeError(f"no ns_per_obj found in {path}")
+        raise RuntimeError(f"no benchmark data found in {path}")
 
     return obj_seen, batch_seen, vals
 
+
 def mean(xs):
     return sum(xs) / len(xs)
+
 
 def stdev(xs):
     if len(xs) < 2:
@@ -88,8 +125,10 @@ def stdev(xs):
     m = mean(xs)
     return math.sqrt(sum((x - m) ** 2 for x in xs) / (len(xs) - 1))
 
+
 def fmt(v):
     return f"{v:.2f}"
+
 
 def summarize_pair(before_path: Path, after_path: Path):
     b_obj, b_batch, b_vals = parse_ns_per_obj(before_path)
@@ -127,6 +166,7 @@ def summarize_pair(before_path: Path, after_path: Path):
         "after_file": after_path.name,
     }
 
+
 def read_meta(meta_path: Path):
     if meta_path.exists():
         try:
@@ -134,6 +174,7 @@ def read_meta(meta_path: Path):
         except PermissionError:
             return f"[WARN] cannot read {meta_path}: permission denied"
     return ""
+
 
 def discover_pairs(d: Path):
     pairs = []
@@ -151,6 +192,7 @@ def discover_pairs(d: Path):
             )
 
     return pairs
+
 
 def main():
     if len(sys.argv) != 2:
@@ -202,6 +244,7 @@ def main():
         )
         print(f"delta: {c['delta']:+.1f}%")
         print()
+
 
 if __name__ == "__main__":
     main()
