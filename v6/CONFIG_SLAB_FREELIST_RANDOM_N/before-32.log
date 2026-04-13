@@ -1,0 +1,40 @@
+[   16.728916] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.734372] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.740239] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.745753] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.751154] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.756838] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.762140] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.767842] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.773426] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.780421] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.785829] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.791814] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.797543] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.803780] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.809334] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.815084] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.820656] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.826591] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.832335] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   16.838930] slub_bulk_bench: version magic '7.0.0-rc7-next-20260407-00001-g0e21c8ee81cf-dirty SMP preempt mod_unload ' should be '7.0.0-rc7-next-20260407-dirty SMP preempt mod_unload '
+[   47.129171] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58701351 ns_per_bulk=895 ns_per_obj=6
+[   47.683754] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=57983673 ns_per_bulk=884 ns_per_obj=6
+[   48.238127] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58068216 ns_per_bulk=886 ns_per_obj=6
+[   48.789370] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58245881 ns_per_bulk=888 ns_per_obj=6
+[   49.347463] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=57739563 ns_per_bulk=881 ns_per_obj=6
+[   49.910029] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=59534743 ns_per_bulk=908 ns_per_obj=7
+[   50.469190] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58763588 ns_per_bulk=896 ns_per_obj=7
+[   51.021915] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58380917 ns_per_bulk=890 ns_per_obj=6
+[   51.576688] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58737611 ns_per_bulk=896 ns_per_obj=7
+[   52.128667] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58134794 ns_per_bulk=887 ns_per_obj=6
+[   52.679237] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58474540 ns_per_bulk=892 ns_per_obj=6
+[   53.234010] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58803498 ns_per_bulk=897 ns_per_obj=7
+[   53.789059] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=59077860 ns_per_bulk=901 ns_per_obj=7
+[   54.340674] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=57857022 ns_per_bulk=882 ns_per_obj=6
+[   54.894514] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58061189 ns_per_bulk=885 ns_per_obj=6
+[   55.446222] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58624877 ns_per_bulk=894 ns_per_obj=6
+[   55.999643] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=57030567 ns_per_bulk=870 ns_per_obj=6
+[   56.553908] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58391778 ns_per_bulk=890 ns_per_obj=6
+[   57.101520] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=57669334 ns_per_bulk=879 ns_per_obj=6
+[   57.656903] slub_bulk_bench: obj=32 batch=128 order=0 bulks=65536 total_mb=256 alloc_ns=58792862 ns_per_bulk=897 ns_per_obj=7
